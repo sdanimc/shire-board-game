@@ -26,7 +26,8 @@
 <body>
   <header>
     <h1>Drinking Games</h1>
-    <p>site description</p>
+    <p>You and your friends ever have difficulty making a decision about what game to play or what to drink? 
+      Here is a random suggestion generator just for you!</p>
   </header>
   <main>
     <div id="maincontent">
@@ -53,13 +54,25 @@
         <input id="checkbox1" type="checkbox">
         
         <button id="saveGame" class="saveFavorites">Save to Favorites?</button>
+        <button id="randomGame" class="generateBtn">Randomizer</button>
       </div>
       <div id="drink" class="suggestions">
         <h2>Drink</h2>
         <button class="hollow button" href="#" id="randomDrink">Randomize</button>
         <!--img place holder-->
         <img src="#" id="drinkpic" />
-        <p>Description: <span id="drinkdscrpt"></span></p>
+
+        <p>Instructions: <span id="drinkdscrpt"></span></p>
+        <p><button class="button" data-open="exampleModal1">Click me for a modal
+        <div class="reveal" id="exampleModal1" data-reveal>
+          <h1>Ingredients:</h1>
+          <p class="ingredList">Ingredients here</p>
+          <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </button>
+        </div>
+        </button></p>
         <!-- favorites checkbox for drinks-->
         <input id="checkbox2" type="checkbox">
         <button id="saveDrink" class="saveFavorites">Save to Favorites?</button>
