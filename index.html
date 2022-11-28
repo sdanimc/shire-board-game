@@ -61,18 +61,15 @@
         <button class="hollow button" href="#" id="randomDrink">Randomize</button>
         <!--img place holder-->
         <img src="#" id="drinkpic" />
+        <p><button class="button" data-open="exampleModal2">Ingredients List</button></p>
 
-        <p>Instructions: <span id="drinkdscrpt"></span></p>
-        <p><button class="button" data-open="exampleModal1">Click me for a modal
-        <div class="reveal" id="exampleModal1" data-reveal>
+        <div class="reveal" id="exampleModal2" data-reveal>
           <h1>Ingredients:</h1>
-          <p class="ingredList">Ingredients here</p>
-          <button class="close-button" data-close aria-label="Close modal" type="button">
+          <p>List ingredients here:</p>
+          <button class="close-button" data-close aria-label="Close reveal" type="button">
             <span aria-hidden="true">&times;</span>
           </button>
-        </button>
         </div>
-        </button></p>
         <!-- favorites checkbox for drinks-->
         <input id="checkbox2" type="checkbox">
         <button id="saveDrink" class="saveFavorites">Save to Favorites?</button>
