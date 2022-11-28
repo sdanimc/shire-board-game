@@ -11,6 +11,7 @@ function fetchDrink() {
         })
         .then(function(data) {
             console.log(data);
+            console.log(data.drinks[0].strIngredient1)
             // Place drink image
             var drinkPic = document.getElementById("drinkpic");
             drinkPic.setAttribute("src", data.drinks[0].strDrinkThumb);
@@ -34,6 +35,7 @@ function fetchGame() {
             // Place board game description
             var gameDescrip = document.getElementById("gamedscrpt");
             gameDescrip.textContent = data.games[0].description_preview;
+
 
         })
 }
