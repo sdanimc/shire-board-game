@@ -19,6 +19,10 @@ main {
   width: 250px;
   height: fit-content;
 }
+.vertical li:hover{
+  cursor: pointer;
+
+}
 
 #maincontent {
   flex-direction: row;
