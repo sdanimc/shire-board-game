@@ -70,22 +70,17 @@ function fetchDrink() {
       ingredientList = document.getElementById("ingredList");
       ingredients = [];
       for (i = 0; i < ingredientArray.length; i++) {
-        // console.log(data.drinks[0])
-        console.log(ingredientArray[i]);
         if (ingredientArray[i] == null) {
           break;
         } else {
-          // console.log(ingredientList)
-          // document.createElement("p") =
           ingredients.push(ingredientArray[i] + ": " + "\n" + measureArray[i]);
         }
         string = ingredients.join("<br />");
-        console.log(string);
         ingredientList.innerHTML = string;
-        //Fetch amounts
-        // measurements = []
-        // for (i = 0; i < measureArray.length; i++){
       }
+
+        // Display drink name
+        document.getElementById("drink-title").textContent = data.drinks[0].strDrink
     });
 }
 //global variables for storage
@@ -98,8 +93,6 @@ function fetchGame() {
         })
         .then(function (data) {
             console.log(data);
-            console.log(data.games[0].name)
-            console.log(data.games[0].id)
             // Place board game image
             var gamePic = document.getElementById("gamepic");
             gamePic.setAttribute("src", data.games[0].image_url);
@@ -108,6 +101,8 @@ function fetchGame() {
             gameDescrip.textContent = data.games[0].description_preview;
             gameName = data.games[0].name
             gameId = data.games[0].id
+            // Display game name
+            document.getElementById("board-game-title").textContent = data.games[0].name
         })
 }
 
