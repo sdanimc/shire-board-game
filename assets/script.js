@@ -10,6 +10,11 @@ var gamesUrl =
   numPlayers++ +
   "&client_id=" +
   gamesKey;
+var savedGameUrl =
+  "https://api.boardgameatlas.com/api/search?list_id=" +
+  gameId +
+  "&client_id=" +
+  gamesKey;
 
 //Variables for pulling ingredients and measurements
 
