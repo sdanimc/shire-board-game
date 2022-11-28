@@ -6,8 +6,8 @@ header {
   line-height: 4rem;
   font-size: 1rem;
 }
-h1{
-    font-size: 2rem;
+h1 {
+  font-size: 2rem;
 }
 
 main {
@@ -19,9 +19,15 @@ main {
   height: fit-content;
 }
 
-#maincontent, #asidecontent{
+#maincontent {
+  flex-direction: row;
   display: flex;
-  width: 70%;
+  width: 100%;
+  margin: 5px;
+}
+#favorites {
+  display: flex;
+  width: 100%;
   margin: 5px;
 }
 
