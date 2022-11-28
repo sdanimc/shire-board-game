@@ -1,6 +1,7 @@
 var gameRandomize = document.getElementById('randomGame');
 var drinkRandomize = document.getElementById('randomDrink');
-var saveButton = document.getElementById('saveGame')
+var saveButtonGame = document.getElementById('saveGame')
+var saveButtonDrink = document.getElementById('saveDrink')
 
 
 // Listen for a click event on game button game randomizer
@@ -21,7 +22,13 @@ drinkRandomize.addEventListener("click", function (event) {
 });
 
 // listen for a click event on save game button
-saveButton.addEventListener("click", function(event){
+saveButtonGame.addEventListener("click", function(event){
   event.preventDefault;
   saveGame()
+})
+
+// listen for a click event on save drink button
+saveButtonDrink.addEventListener("click", function(event){
+  event.preventDefault;
+  saveDrink()
 })

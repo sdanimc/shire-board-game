@@ -15,6 +15,8 @@ var savedGameUrl =
   gameId +
   "&client_id=" +
   gamesKey;
+var drinkId
+var savedDrinkUrl = "www.thecocktaildb.com/api/json/v2/1/lookup.php?i="+ drinkId
 
 //Variables for pulling ingredients and measurements
 
@@ -78,6 +80,8 @@ function fetchDrink() {
         string = ingredients.join("<br />");
         ingredientList.innerHTML = string;
       }
+      drinkId = data.drinks[0].idDrink;
+      drinkName = data.drinks[0].strDrink;
 
         // Display drink name
         document.getElementById("drink-title").textContent = data.drinks[0].strDrink
@@ -107,7 +111,6 @@ function fetchGame() {
 }
 
 function saveGame() {
-    // localStorage.setItem(gameName, gameId)
     console.log(localStorage.getItem(gameName))
     console.log(gameName)
     console.log(localStorage.hasOwnProperty(gameName))
@@ -132,4 +135,30 @@ function fetchSavedGame() {
         .then(function (data) {
             console.log(data)
         })
+}
+
+function saveDrink() {
+  console.log(localStorage.getItem(drinkName))
+  console.log(drinkName)
+  console.log(localStorage.hasOwnProperty(drinkName))
+  if (localStorage.hasOwnProperty(drinkName) === true) {
+      return
+  }
+  else {
+      localStorage.setItem(drinkName, drinkId)
+      favoriteDrink = document.createElement("li")
+      document.getElementById("savedDrinks").append(favoriteDrink)
+      favoriteDrink.textContent = drinkName
+      favoriteDrink.setAttribute("id", drinkId)
+  }
+}
+
+function fetchSavedDrink() {
+  fetch(savedDrinkUrl)
+      .then(function (response) {
+          return response.json();
+      })
+      .then(function (data) {
+          console.log(data)
+      })
 }
