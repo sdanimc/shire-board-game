@@ -83,19 +83,53 @@ function fetchDrink() {
       }
     });
 }
-
+//global variables for storage
+var gameName
+var gameId
 function fetchGame() {
-  fetch(gamesUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      // Place board game image
-      var gamePic = document.getElementById("gamepic");
-      gamePic.setAttribute("src", data.games[0].image_url);
-      // Place board game description
-      var gameDescrip = document.getElementById("gamedscrpt");
-      gameDescrip.textContent = data.games[0].description_preview;
-    });
+    fetch(gamesUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            console.log(data.games[0].name)
+            console.log(data.games[0].id)
+            // Place board game image
+            var gamePic = document.getElementById("gamepic");
+            gamePic.setAttribute("src", data.games[0].image_url);
+            // Place board game description
+            var gameDescrip = document.getElementById("gamedscrpt");
+            gameDescrip.textContent = data.games[0].description_preview;
+            gameName = data.games[0].name
+            gameId = data.games[0].id
+        })
+}
+
+function saveGame() {
+    // localStorage.setItem(gameName, gameId)
+    console.log(localStorage.getItem(gameName))
+    console.log(gameName)
+    console.log(localStorage.hasOwnProperty(gameName))
+
+    if (localStorage.hasOwnProperty(gameName) === true) {
+        return
+    }
+    else {
+        localStorage.setItem(gameName, gameId)
+        favoriteGame = document.createElement("li")
+        document.getElementById("savedGames").append(favoriteGame)
+        favoriteGame.textContent = gameName
+        favoriteGame.setAttribute("id", gameId)
+    }
+}
+
+function fetchSavedGame() {
+    fetch(savedGameUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data)
+        })
 }
