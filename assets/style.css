@@ -19,11 +19,12 @@ main {
   height: fit-content;
 }
 
-#maincontent {
+#maincontent, #asidecontent{
   display: flex;
   width: 70%;
   margin: 5px;
 }
+
 .suggestions {
   border: 1px solid black;
   min-height: 100px;
