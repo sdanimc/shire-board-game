@@ -6,8 +6,8 @@ header {
   line-height: 4rem;
   font-size: 1rem;
 }
-h1{
-    font-size: 2rem;
+h1 {
+  font-size: 2rem;
 }
 
 main {
@@ -19,15 +19,32 @@ main {
   height: fit-content;
 }
 
-#maincontent, #asidecontent{
+#maincontent {
+  flex-direction: row;
   display: flex;
-  width: 70%;
+  width: 100%;
+  margin: 5px;
+}
+#asidecontent {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
   margin: 5px;
 }
 
 .suggestions {
   border: 1px solid black;
   min-height: 100px;
+  padding: 7px;
+  line-height: 1.3rem;
+  width: 50%;
+  margin: 5px;
+  text-align: center;
+}
+.favStyle {
+  border: 1px solid black;
+  min-height: 100px;
+  max-height: 1000px;
   padding: 7px;
   line-height: 1.3rem;
   width: 50%;
