@@ -21,7 +21,9 @@ h1 {
 h2{
   color:brown;
 }
-
+.favHeader{
+  font-size: 1.4rem;
+}
 main {
   display: flex;
   min-height: 100%;
