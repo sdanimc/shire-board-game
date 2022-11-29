@@ -76,6 +76,12 @@ main {
 ul{
   background-color: rgb(255, 255, 255);
 }
+.menu a{
+  color: brown;
+}
+.menu a:hover{
+  background-color: rgb(255, 235, 206);
+}
 .suggestPic {
   display: none;
   padding: 5px;
