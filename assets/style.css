@@ -10,9 +10,10 @@ body {
   background: rgb(0, 0, 0);
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
+    rgb(255, 227, 186) -50%,
+    rgb(255, 255, 255) 30%
   );
+  background-attachment: fixed;
 }
 h1 {
   font-size: 2rem;
