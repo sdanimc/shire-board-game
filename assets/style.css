@@ -68,3 +68,6 @@ main {
 .grid-x{
   width: 100%;
 }
+.onGenerate{ 
+  display: none;
+}
