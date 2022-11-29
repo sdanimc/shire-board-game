@@ -57,6 +57,9 @@ main {
   margin: 5px;
   text-align: center;
 }
+#boardgame{
+  margin-left: 10px;
+}
 .favStyle {
   border: 1px solid black;
   min-height: 100px;
