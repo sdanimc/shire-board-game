@@ -61,15 +61,20 @@ main {
   margin-left: 10px;
 }
 .favStyle {
-  border: 1px solid black;
+  /*border: 2px solid brown;*/
   min-height: 100px;
   max-height: 1000px;
   padding: 7px;
-  line-height: 1.3rem;
+  line-height: 1.4rem;
   width: 50%;
   margin: 5px;
   text-align: center;
   height: fit-content;
+  background-color: rgb(172, 49, 49);
+  color: whitesmoke;
+}
+ul{
+  background-color: rgb(255, 255, 255);
 }
 .suggestPic {
   display: none;
