@@ -1,5 +1,11 @@
 header {
-  background-color: brown;
+  background: rgb(255, 70, 33);
+  background: radial-gradient(
+    circle,
+    rgba(255, 70, 33, 1) 0%,
+    rgba(236, 171, 19, 1) 25%,
+    rgba(255, 244, 8, 1) 96%
+  );
   color: whitesmoke;
   text-align: center;
   width: 100%;
@@ -75,9 +81,9 @@ main {
   width: 30px;
 }
 
-.grid-x{
+.grid-x {
   width: 100%;
 }
-.onGenerate{ 
+.onGenerate {
   display: none;
 }
