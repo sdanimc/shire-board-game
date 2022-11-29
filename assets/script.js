@@ -206,15 +206,6 @@ function loadFavoriteGames() {
     favoriteGame.textContent = gamesStorage[i]
 
   }
-  if (drinkStorage.includes(drinkName)) {
-    return
-  } else {
-    drinkStorage.push(drinkName);
-    localStorage.setItem("Drink Name", JSON.stringify(drinkStorage))
-    favoriteDrink = document.createElement("li")
-    document.getElementById("savedDrinks").append(favoriteDrink)
-    favoriteDrink.textContent = drinkName
-  }
 }
 
 // Populate favorites drink on page load
