@@ -89,3 +89,7 @@ main {
 background-color: rgb(255, 165, 165);
 color:black;
 }
+.button:focus, .button.success:focus{
+  background-color: rgb(255, 165, 165);
+  color:black;
+  }
