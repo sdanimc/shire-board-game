@@ -84,8 +84,15 @@ function fetchDrink() {
       drinkId = data.drinks[0].idDrink;
       drinkName = data.drinks[0].strDrink;
 
+       //display btns
+       var drinkDBtn = document.getElementById("drinkBtnD");
+       drinkDBtn.style.display = "inline-block";
+       var savedrinkBtn = document.getElementById("saveDrink");
+       savedrinkBtn.style.display = "inline-block";
+
       // Display drink name
-      document.getElementById("drink-title").textContent = data.drinks[0].strDrink
+      document.getElementById("drink-title").textContent =
+        data.drinks[0].strDrink;
     });
 }
 //global variables for storage
@@ -109,6 +116,11 @@ function fetchGame() {
       gameId = data.games[0].id
       // Display game name
       document.getElementById("board-game-title").textContent = data.games[0].name
+      //display btns
+      var gameDBtn = document.getElementById("gameBtnD");
+      gameDBtn.style.display = "inline-block";
+      var saveGameBtn = document.getElementById("saveGame");
+      saveGameBtn.style.display = "inline-block";
     })
 }
 
@@ -118,14 +130,13 @@ function saveGame() {
   console.log(localStorage.hasOwnProperty(gameName))
 
   if (localStorage.hasOwnProperty(gameName) === true) {
-    return
-  }
-  else {
-    localStorage.setItem(gameName, gameId)
-    favoriteGame = document.createElement("li")
-    document.getElementById("savedGames").append(favoriteGame)
-    favoriteGame.textContent = gameName
-    favoriteGame.setAttribute("id", gameId)
+    return;
+  } else {
+    localStorage.setItem(gameName, gameId);
+    favoriteGame = document.createElement("li");
+    document.getElementById("savedGames").append(favoriteGame);
+    favoriteGame.textContent = gameName;
+    favoriteGame.setAttribute("id", gameId);
   }
 }
 
@@ -167,32 +178,6 @@ if (localStorage.getItem("Drink Name") !== null) {
     favoriteDrink = document.createElement("li");
     document.getElementById("savedDrinks").append(favoriteDrink);
     favoriteDrink.textContent = drinkStorage[i];
-  }
-}
-
-function fetchSavedDrink() {
-  fetch(savedDrinkUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data)
-    })
-}
-
-function saveDrink() {
-  console.log(localStorage.getItem(drinkName))
-  console.log(drinkName)
-  console.log(localStorage.hasOwnProperty(drinkName))
-  if (localStorage.hasOwnProperty(drinkName) === true) {
-    return
-  }
-  else {
-    localStorage.setItem(drinkName, drinkId)
-    favoriteDrink = document.createElement("li")
-    document.getElementById("savedDrinks").append(favoriteDrink)
-    favoriteDrink.textContent = drinkName
-    favoriteDrink.setAttribute("id", drinkId)
   }
 }
 
