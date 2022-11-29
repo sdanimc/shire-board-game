@@ -72,12 +72,24 @@ main {
 
 #sliderOutput2 {
   padding: 2px;
-  width: 30px;
+  width: 45px;
 }
 
 .grid-x{
-  width: 100%;
+  width: 85%;
 }
 .onGenerate{ 
   display: none;
 }
+.button, .button.success{
+  background-color: brown;
+  color:whitesmoke;
+}
+.button:hover, .button.success:hover{
+background-color: rgb(255, 165, 165);
+color:black;
+}
+.button:focus, .button.success:focus{
+  background-color: rgb(255, 165, 165);
+  color:black;
+  }
