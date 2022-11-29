@@ -30,6 +30,7 @@ function fetchDrink() {
       drinkData = [data.drinks[0]];
       // Place drink image
       var drinkPic = document.getElementById("drinkpic");
+      drinkPic.style.display ="inline-block";
       drinkPic.setAttribute("src", data.drinks[0].strDrinkThumb);
       // Place drink instructions
       var drinkInstruc = document.getElementById("drinkdscrpt");
@@ -99,6 +100,7 @@ function fetchGame() {
             console.log(data);
             // Place board game image
             var gamePic = document.getElementById("gamepic");
+            gamePic.style.display ="inline-block";
             gamePic.setAttribute("src", data.games[0].image_url);
             // Place board game description
             var gameDescrip = document.getElementById("gamedscrpt");
