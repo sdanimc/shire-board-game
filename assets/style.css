@@ -16,7 +16,10 @@ body {
   background-attachment: fixed;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 3rem;
+}
+h2{
+  color:brown;
 }
 
 main {
@@ -93,3 +96,21 @@ color:black;
   background-color: rgb(255, 165, 165);
   color:black;
   }
+.button.hollow, .button.hollow:focus{
+  color:brown;
+  border: 2px solid brown;
+  font-size: 1.1rem; 
+}
+.button.hollow:hover{
+  color:rgb(113, 22, 22);
+  border-color: rgb(113, 22, 22);
+}
+.slider-handle{
+  background-color: brown;
+}
+
+@media screen and (max-width: 639.9px) {
+  h2{
+    font-size: 2rem;
+  }
+}
