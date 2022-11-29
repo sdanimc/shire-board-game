@@ -32,10 +32,10 @@
   <main>
     <div id="maincontent">
       <div id="boardgame" class="suggestions">
-        <h2 id="board-game-title">Board Game Box</h2>
+        <h2 id="board-game-title">Board Game</h2>
         <button class="hollow button" href="#" id="randomGame">Randomize</button>
         <!--img place holder-->
-        <img src="#" id="gamepic" />
+        <img src="#" id="gamepic" class="suggestPic"/>
         <p>Description: <span id="gamedscrpt"></span>
           <!--slider for number of players select-->
           <div class="grid-x grid-margin-x">
@@ -52,14 +52,12 @@
         </p>
         <!--Favorites checkbox for game-->
         <button id="saveGame" class="submit success button">Save</button>
-        
-        <button class="saveFavorites">Save to Favorites?</button>
       </div>
       <div id="drink" class="suggestions">
         <h2 id="drink-title">Drink</h2>
         <button class="hollow button" href="#" id="randomDrink">Randomize</button>
         <!--img place holder-->
-        <img src="#" id="drinkpic" />
+        <img src="#" id="drinkpic" class="suggestPic"/>
         <p><button class="button" data-open="exampleModal2">Ingredients List</button></p>
 
         <div class="reveal" id="exampleModal2" data-reveal>
@@ -73,26 +71,26 @@
         </div>
         <!-- favorites checkbox for drinks-->
         <button id="saveDrink" class="submit success button">Save</button>
-        <button class="saveFavorites">Save to Favorites?</button>
   </div>
     
     <!-- section for tabs and accessing favorites-->
       <div id="asidecontent">
         <div id="boardgameFav" class="favStyle">
-          Board Game Box
+          Favorite Board Games
           <ul id="savedGames" class="vertical menu">
-           <li><a href="#">One</a></li>
+           <!-- eliminate eventually <li><a href="#">One</a></li>
             <li><a href="#">Two</a></li>
             <li><a href="#">Three</a></li>
-            <li><a href="#">Four</a></li>
+            <li><a href="#">Four</a></li>-->
           </ul>
         </div>
-        <div id="drinkFav" class="favStyle">Drink Box
-          <ul class="vertical menu">
-            <li><a href="#">One</a></li>
+        <div id="drinkFav" class="favStyle">
+          Favorite Drinks
+          <ul id="savedDrinks" class="vertical menu">
+            <!--<li><a href="#">One</a></li>
             <li><a href="#">Two</a></li>
             <li><a href="#">Three</a></li>
-            <li><a href="#">Four</a></li>
+            <li><a href="#">Four</a></li>-->
           </ul>
         </div>
         </div>
