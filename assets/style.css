@@ -64,7 +64,6 @@ main {
   margin-left: 10px;
 }
 .favStyle {
-  /*border: 2px solid brown;*/
   min-height: 100px;
   max-height: 1000px;
   padding: 7px;
@@ -88,6 +87,7 @@ ul{
 .suggestPic {
   display: none;
   padding: 5px;
+  margin-bottom: 3px;
 }
 
 #sliderOutput2 {
