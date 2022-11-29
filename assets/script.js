@@ -146,8 +146,8 @@ function fetchSavedGame() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
-    })
+      console.log(data);
+    });
 }
 
 // Define variable for use in storing drinks in local storage and under favorites
