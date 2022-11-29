@@ -146,23 +146,38 @@ function fetchSavedGame() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
-    });
+      console.log(data)
+    })
 }
 
+// Define variable for use in storing drinks in local storage and under favorites
+var drinkStorage;
+if (localStorage.getItem("Drink Name") !== null) {
+  drinkStorage = JSON.parse(localStorage.getItem("Drink Name"));
+} else {
+  drinkStorage = [];
+}
+
+// Function to save drinks to local storage and favorites list
 function saveDrink() {
-  console.log(localStorage.getItem(drinkName))
-  console.log(drinkName)
-  console.log(localStorage.hasOwnProperty(drinkName))
-  if (localStorage.hasOwnProperty(drinkName) === true) {
+  if (drinkStorage.includes(drinkName)) {
     return
-  }
-  else {
-    localStorage.setItem(drinkName, drinkId)
+  } else {
+    drinkStorage.push(drinkName);
+    localStorage.setItem("Drink Name", JSON.stringify(drinkStorage))
     favoriteDrink = document.createElement("li")
     document.getElementById("savedDrinks").append(favoriteDrink)
     favoriteDrink.textContent = drinkName
-    favoriteDrink.setAttribute("id", drinkId)
+  }
+}
+
+// Populate favorites drink on page load
+if (localStorage.getItem("Drink Name") !== null) {
+  drinkStorage = JSON.parse(localStorage.getItem("Drink Name"));
+  for (var i = 0; i < drinkStorage.length; i++) {
+    favoriteDrink = document.createElement("li");
+    document.getElementById("savedDrinks").append(favoriteDrink);
+    favoriteDrink.textContent = drinkStorage[i];
   }
 }
 
@@ -176,28 +191,3 @@ function fetchSavedDrink() {
     })
 }
 
-function saveDrink() {
-  console.log(localStorage.getItem(drinkName))
-  console.log(drinkName)
-  console.log(localStorage.hasOwnProperty(drinkName))
-  if (localStorage.hasOwnProperty(drinkName) === true) {
-    return
-  }
-  else {
-    localStorage.setItem(drinkName, drinkId)
-    favoriteDrink = document.createElement("li")
-    document.getElementById("savedDrinks").append(favoriteDrink)
-    favoriteDrink.textContent = drinkName
-    favoriteDrink.setAttribute("id", drinkId)
-  }
-}
-
-function fetchSavedDrink() {
-  fetch(savedDrinkUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data)
-    })
-}
