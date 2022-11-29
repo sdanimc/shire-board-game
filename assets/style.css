@@ -69,7 +69,19 @@ main {
   display: none;
   padding: 5px;
 }
+
 #sliderOutput2 {
   padding: 2px;
   width: 30px;
+}
+=======
+#sliderOutput2{ 
+  padding: 2px;
+  width: 30px;
+}
+.grid-x{
+  width: 100%;
+}
+.onGenerate{ 
+  display: none;
 }
