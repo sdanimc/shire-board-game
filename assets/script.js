@@ -84,13 +84,14 @@ function fetchDrink() {
       drinkId = data.drinks[0].idDrink;
       drinkName = data.drinks[0].strDrink;
 
-        // Display drink name
-        document.getElementById("drink-title").textContent = data.drinks[0].strDrink
+      // Display drink name
+      document.getElementById("drink-title").textContent =
+        data.drinks[0].strDrink;
     });
 }
 //global variables for storage
-var gameName
-var gameId
+var gameName;
+var gameId;
 function fetchGame() {
     fetch(gamesUrl)
         .then(function (response) {
@@ -117,26 +118,51 @@ function saveGame() {
     console.log(gameName)
     console.log(localStorage.hasOwnProperty(gameName))
 
-    if (localStorage.hasOwnProperty(gameName) === true) {
-        return
-    }
-    else {
-        localStorage.setItem(gameName, gameId)
-        favoriteGame = document.createElement("li")
-        document.getElementById("savedGames").append(favoriteGame)
-        favoriteGame.textContent = gameName
-        favoriteGame.setAttribute("id", gameId)
-    }
+  if (localStorage.hasOwnProperty(gameName) === true) {
+    return;
+  } else {
+    localStorage.setItem(gameName, gameId);
+    favoriteGame = document.createElement("li");
+    document.getElementById("savedGames").append(favoriteGame);
+    favoriteGame.textContent = gameName;
+    favoriteGame.setAttribute("id", gameId);
+  }
 }
 
 function fetchSavedGame() {
-    fetch(savedGameUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data)
-        })
+  fetch(savedGameUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
+}
+
+function saveDrink() {
+  console.log(localStorage.getItem(drinkName))
+  console.log(drinkName)
+  console.log(localStorage.hasOwnProperty(drinkName))
+  if (localStorage.hasOwnProperty(drinkName) === true) {
+      return
+  }
+  else {
+      localStorage.setItem(drinkName, drinkId)
+      favoriteDrink = document.createElement("li")
+      document.getElementById("savedDrinks").append(favoriteDrink)
+      favoriteDrink.textContent = drinkName
+      favoriteDrink.setAttribute("id", drinkId)
+  }
+}
+
+function fetchSavedDrink() {
+  fetch(savedDrinkUrl)
+      .then(function (response) {
+          return response.json();
+      })
+      .then(function (data) {
+          console.log(data)
+      })
 }
 
 function saveDrink() {
