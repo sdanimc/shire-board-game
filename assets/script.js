@@ -16,7 +16,7 @@ var savedGameUrl =
   "&client_id=" +
   gamesKey;
 var drinkId
-var savedDrinkUrl = "www.thecocktaildb.com/api/json/v2/1/lookup.php?i="+ drinkId
+var savedDrinkUrl = "www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + drinkId
 
 //Variables for pulling ingredients and measurements
 
@@ -30,7 +30,7 @@ function fetchDrink() {
       drinkData = [data.drinks[0]];
       // Place drink image
       var drinkPic = document.getElementById("drinkpic");
-      drinkPic.style.display ="inline-block";
+      drinkPic.style.display = "inline-block";
       drinkPic.setAttribute("src", data.drinks[0].strDrinkThumb);
       // Place drink instructions
       var drinkInstruc = document.getElementById("drinkdscrpt");
@@ -84,59 +84,78 @@ function fetchDrink() {
       drinkId = data.drinks[0].idDrink;
       drinkName = data.drinks[0].strDrink;
 
-        // Display drink name
-        document.getElementById("drink-title").textContent = data.drinks[0].strDrink
+      // Display drink name
+      document.getElementById("drink-title").textContent = data.drinks[0].strDrink
     });
 }
 //global variables for storage
 var gameName
 var gameId
 function fetchGame() {
-    fetch(gamesUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            // Place board game image
-            var gamePic = document.getElementById("gamepic");
-            gamePic.style.display ="inline-block";
-            gamePic.setAttribute("src", data.games[0].image_url);
-            // Place board game description
-            var gameDescrip = document.getElementById("gamedscrpt");
-            gameDescrip.textContent = data.games[0].description_preview;
-            gameName = data.games[0].name
-            gameId = data.games[0].id
-            // Display game name
-            document.getElementById("board-game-title").textContent = data.games[0].name
-        })
+  fetch(gamesUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      // Place board game image
+      var gamePic = document.getElementById("gamepic");
+      gamePic.style.display = "inline-block";
+      gamePic.setAttribute("src", data.games[0].image_url);
+      // Place board game description
+      var gameDescrip = document.getElementById("gamedscrpt");
+      gameDescrip.textContent = data.games[0].description_preview;
+      gameName = data.games[0].name
+      gameId = data.games[0].id
+      // Display game name
+      document.getElementById("board-game-title").textContent = data.games[0].name
+    })
 }
 
-function saveGame() {
-    console.log(localStorage.getItem(gameName))
-    console.log(gameName)
-    console.log(localStorage.hasOwnProperty(gameName))
+// Push savegame into array, save that to local storage, then pull those on page load, and use fetch requests to make favorites list
+var gamesStorage
+var gamesPulled
 
-    if (localStorage.hasOwnProperty(gameName) === true) {
-        return
-    }
-    else {
-        localStorage.setItem(gameName, gameId)
-        favoriteGame = document.createElement("li")
-        document.getElementById("savedGames").append(favoriteGame)
-        favoriteGame.textContent = gameName
-        favoriteGame.setAttribute("id", gameId)
-    }
+if (localStorage.getItem("Saved Games") !== null) {
+  random = localStorage.getItem("Saved Games");
+  gamesStorage = random.split(",")
+  console.log(typeof random)
+  console.log(random)
+  console.log(gamesStorage)
+  // gamesPulled = gamesStorage.split(",")
+  loadFavoriteGames()
+} else {
+var gamesStorage = []
+}
+
+
+
+function saveGame() {
+  console.log(localStorage.getItem(gameName))
+  console.log(gameName)
+  console.log(localStorage.hasOwnProperty(gameName))
+
+  if (gamesStorage.includes(gameName) === true) {
+    return
+  }
+  else {
+    gamesStorage.push(gameName)
+    localStorage.setItem("Saved Games", JSON.stringify(gamesStorage))
+    favoriteGame = document.createElement("li")
+    document.getElementById("savedGames").append(favoriteGame)
+    favoriteGame.textContent = gameName
+    favoriteGame.setAttribute("id", gameId)
+  }
 }
 
 function fetchSavedGame() {
-    fetch(savedGameUrl)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data)
-        })
+  fetch(savedGameUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data)
+    })
 }
 
 function saveDrink() {
@@ -144,23 +163,29 @@ function saveDrink() {
   console.log(drinkName)
   console.log(localStorage.hasOwnProperty(drinkName))
   if (localStorage.hasOwnProperty(drinkName) === true) {
-      return
+    return
   }
   else {
-      localStorage.setItem(drinkName, drinkId)
-      favoriteDrink = document.createElement("li")
-      document.getElementById("savedDrinks").append(favoriteDrink)
-      favoriteDrink.textContent = drinkName
-      favoriteDrink.setAttribute("id", drinkId)
+    localStorage.setItem(drinkName, drinkId)
+    favoriteDrink = document.createElement("li")
+    document.getElementById("savedDrinks").append(favoriteDrink)
+    favoriteDrink.textContent = drinkName
+    favoriteDrink.setAttribute("id", drinkId)
   }
 }
 
-function fetchSavedDrink() {
-  fetch(savedDrinkUrl)
-      .then(function (response) {
-          return response.json();
-      })
-      .then(function (data) {
-          console.log(data)
-      })
+var savedDrinkUrl = "www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + drinkId
+
+
+function loadFavoriteDrink() {
+}
+
+function loadFavoriteGames() {
+  gamesStorage = JSON.parse(localStorage.getItem("Saved Games"))
+  for (i = 0; i < gamesStorage.length; i++) {
+    favoriteGame = document.createElement("li")
+    document.getElementById("savedGames").append(favoriteGame)
+    favoriteGame.textContent = gamesStorage[i]
+
+  }
 }
