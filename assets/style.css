@@ -6,6 +6,14 @@ header {
   line-height: 4rem;
   font-size: 1rem;
 }
+body {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
 h1 {
   font-size: 2rem;
 }
@@ -19,9 +27,8 @@ main {
   width: 250px;
   height: fit-content;
 }
-.vertical li:hover{
+.vertical li:hover {
   cursor: pointer;
-
 }
 
 #maincontent {
@@ -57,12 +64,11 @@ main {
   text-align: center;
   height: fit-content;
 }
-.suggestPic{
+.suggestPic {
   display: none;
   padding: 5px;
 }
-#sliderOutput2{
+#sliderOutput2 {
   padding: 2px;
   width: 30px;
-
 }
