@@ -82,7 +82,7 @@ ul{
 .menu li{
   color: brown;
 }
-.menu a:hover{
+.menu li:hover{
   background-color: rgb(255, 235, 206);
 }
 .suggestPic {
