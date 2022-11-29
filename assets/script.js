@@ -89,8 +89,8 @@ function fetchDrink() {
     });
 }
 //global variables for storage
-var gameName
-var gameId
+var gameName;
+var gameId;
 function fetchGame() {
   fetch(gamesUrl)
     .then(function (response) {
@@ -167,6 +167,32 @@ if (localStorage.getItem("Drink Name") !== null) {
     favoriteDrink = document.createElement("li");
     document.getElementById("savedDrinks").append(favoriteDrink);
     favoriteDrink.textContent = drinkStorage[i];
+  }
+}
+
+function fetchSavedDrink() {
+  fetch(savedDrinkUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data)
+    })
+}
+
+function saveDrink() {
+  console.log(localStorage.getItem(drinkName))
+  console.log(drinkName)
+  console.log(localStorage.hasOwnProperty(drinkName))
+  if (localStorage.hasOwnProperty(drinkName) === true) {
+    return
+  }
+  else {
+    localStorage.setItem(drinkName, drinkId)
+    favoriteDrink = document.createElement("li")
+    document.getElementById("savedDrinks").append(favoriteDrink)
+    favoriteDrink.textContent = drinkName
+    favoriteDrink.setAttribute("id", drinkId)
   }
 }
 
