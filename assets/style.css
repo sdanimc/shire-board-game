@@ -1,11 +1,21 @@
 header {
-  background-color: brown;
-  color: whitesmoke;
+  background: linear-gradient(-45deg, #9c0120, #85291c, #a12e2e, #8b0000);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 120px;
   text-align: center;
-  width: 100%;
-  line-height: 4rem;
-  font-size: 1rem;
-  padding: 8px;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 body {
   background: rgb(0, 0, 0);
@@ -19,10 +29,10 @@ body {
 h1 {
   font-size: 3rem;
 }
-h2{
-  color:brown;
+h2 {
+  color: brown;
 }
-.favHeader{
+.favHeader {
   font-size: 1.4rem;
 }
 main {
@@ -60,7 +70,7 @@ main {
   margin: 5px;
   text-align: center;
 }
-#boardgame{
+#boardgame {
   margin-left: 10px;
 }
 .favStyle {
@@ -75,9 +85,13 @@ main {
   background-color: rgb(172, 49, 49);
   color: whitesmoke;
 }
-ul{
+ul {
   background-color: rgb(255, 255, 255);
 }
+.menu a {
+  color: brown;
+}
+.menu a:hover {
 .menu li{
   color: brown;
 }
@@ -95,40 +109,44 @@ ul{
   width: 45px;
 }
 
-.grid-x{
-  width: 85%;
+.grid-x {
+  width: 100%;
 }
-.onGenerate{ 
+.onGenerate {
   display: none;
 }
-.button, .button.success{
+.button,
+.button.success {
   background-color: brown;
-  color:whitesmoke;
+  color: whitesmoke;
 }
-.button:hover, .button.success:hover{
-background-color: rgb(255, 235, 206);
-color:black;
-}
-.button:focus, .button.success:focus{
+.button:hover,
+.button.success:hover {
   background-color: rgb(255, 235, 206);
-  color:black;
-  }
-.button.hollow, .button.hollow:focus{
-  color:brown;
-  border: 2px solid brown;
-  font-size: 1.1rem; 
+  color: black;
 }
-.button.hollow:hover{
-  color:saddlebrown;
+.button:focus,
+.button.success:focus {
+  background-color: rgb(255, 235, 206);
+  color: black;
+}
+.button.hollow,
+.button.hollow:focus {
+  color: brown;
+  border: 2px solid brown;
+  font-size: 1.1rem;
+}
+.button.hollow:hover {
+  color: saddlebrown;
   border-color: saddlebrown;
   box-shadow: 3px 3px 3px rgb(255, 235, 206);
 }
-.slider-handle{
+.slider-handle {
   background-color: brown;
 }
 
 @media screen and (max-width: 639.9px) {
-  h2{
+  h2 {
     font-size: 2rem;
   }
 }
