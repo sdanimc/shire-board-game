@@ -42,7 +42,7 @@ main {
   min-height: 100px;
   padding: 7px;
   line-height: 1.3rem;
-  width: 50%;
+  width: 100%;
   margin: 5px;
   text-align: center;
 }
@@ -60,4 +60,9 @@ main {
 .suggestPic{
   display: none;
   padding: 5px;
+}
+#sliderOutput2{
+  padding: 2px;
+  width: 30px;
+
 }
