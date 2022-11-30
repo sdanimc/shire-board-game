@@ -1,4 +1,4 @@
-# Board game and Drink suggestor
+# Board & Booze
 
 ## Description
 
@@ -21,5 +21,3 @@ Users can click the save button at the bottom of the card to save a favorite sug
 - API: TheCocktailDB & Board Game Atlas
 - CSS Framework: Foundation
 - Banner Pen: Manuel Pinto https://manuel.pinto.dev
-
-!!!Everyone Check Your Names I went by Discord usernames!!
