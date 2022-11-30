@@ -4,6 +4,7 @@ header {
   animation: gradient 10s ease infinite;
   height: 120px;
   text-align: center;
+  color: whitesmoke;
 }
 
 @keyframes gradient {
