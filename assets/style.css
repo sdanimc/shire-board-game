@@ -162,6 +162,10 @@ ul {
   color: black;
 }
 
+.clear-btn:hover{
+  color:white;
+}
+
 /*Screen adjustment styling*/
 @media screen and (max-width: 639.9px) {
   h2 {
