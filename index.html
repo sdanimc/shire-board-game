@@ -51,34 +51,7 @@
           <div class="cell small-2">
             <input type="number" id="sliderOutput2" />
           </div>
-          <img src="#" id="gamepic" class="suggestPic" />
-          <p>
-            <button
-              id="gameBtnD"
-              class="button onGenerate"
-              data-open="exampleModal1"
-            >
-              Game Description
-            </button>
-          </p>
-          <div class="reveal" id="exampleModal1" data-reveal>
-            <h3>Description:</h3>
-            <span id="gamedscrpt"></span>
-            <button
-              class="close-button"
-              data-close
-              aria-label="Close reveal"
-              type="button"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!--Favorites checkbox for game-->
-          <button id="saveGame" class="submit success button onGenerate">
-            Save
-          </button>
         </div>
-
         <img src="#" id="gamepic" class="suggestPic" />
         <!--modal-->
         <button id="gameBtnD" class="button onGenerate" data-open="exampleModal1">
@@ -91,6 +64,7 @@
           <button class="close-button" data-close aria-label="Close reveal" type="button">
             <span aria-hidden="true">&times;</span>
           </button>
+
         </div>
         <!--save to favorites btn-->
         <button id="saveGame" class="submit success button onGenerate">Save</button>
@@ -137,11 +111,12 @@
 
         </div>
       </div>
-    </main>
-    <script>
-      $(document).foundation();
-    </script>
-    <script src="./assets/script.js"></script>
-    <script src="./eventlistener.js"></script>
-  </body>
+  </main>
+  <script>
+    $(document).foundation();
+  </script>
+  <script src="./assets/script.js"></script>
+  <script src="./eventlistener.js"></script>
+</body>
+
 </html>
