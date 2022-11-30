@@ -4,6 +4,7 @@ header {
   animation: gradient 10s ease infinite;
   height: 120px;
   text-align: center;
+  color: whitesmoke;
 }
 
 @keyframes gradient {
@@ -78,7 +79,6 @@ main {
   margin-left: 10px;
 }
 .favStyle {
-  /*border: 2px solid brown;*/
   min-height: 100px;
   max-height: 1000px;
   padding: 7px;
@@ -93,15 +93,17 @@ main {
 ul {
   background-color: rgb(255, 255, 255);
 }
-.menu a {
+
+.menu li{
   color: brown;
 }
-.menu a:hover {
+.menu li:hover{
   background-color: rgb(255, 235, 206);
 }
 .suggestPic {
   display: none;
   padding: 5px;
+  margin-bottom: 3px;
 }
 
 #sliderOutput2 {

@@ -2,14 +2,8 @@ var drinksKey = "1";
 var drinksUrl =
   "https://www.thecocktaildb.com/api/json/v2/" + drinksKey + "/random.php";
 var gamesKey = "ev1uDl61ro";
-var numPlayers = 4;
-var gamesUrl =
-  "https://api.boardgameatlas.com/api/search?random=true&gt_max_players=" +
-  numPlayers-- +
-  "&lt_min_players=" +
-  numPlayers++ +
-  "&client_id=" +
-  gamesKey;
+var numPlayers;
+var gamesUrl;
 var savedGameUrl =
   "https://api.boardgameatlas.com/api/search?list_id=" +
   gameId +
@@ -17,9 +11,9 @@ var savedGameUrl =
   gamesKey;
 var drinkId
 var savedDrinkUrl = "www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + drinkId
+var savedDrinkUrl = "www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + drinkId
 
-//Variables for pulling ingredients and measurements
-
+// Function to fetch drink API
 function fetchDrink() {
   fetch(drinksUrl)
     .then(function (response) {
@@ -30,7 +24,7 @@ function fetchDrink() {
       drinkData = [data.drinks[0]];
       // Place drink image
       var drinkPic = document.getElementById("drinkpic");
-      drinkPic.style.display = "inline-block";
+      drinkPic.style.display =  "inline-block";
       drinkPic.setAttribute("src", data.drinks[0].strDrinkThumb);
       // Place drink instructions
       var drinkInstruc = document.getElementById("drinkdscrpt");
@@ -99,11 +93,23 @@ function fetchDrink() {
 var gameName;
 var gameId;
 function fetchGame() {
+  var slider = document.getElementById("sliderOutput2");
+  numPlayers = slider.value;
+  gamesUrl =
+  "https://api.boardgameatlas.com/api/search?random=true" +
+  "&gt_max_players=" +
+  numPlayers++ +
+  "&lt_min_players=" +
+  numPlayers-- +
+  "&client_id=" +
+  gamesKey;
   fetch(gamesUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+      console.log(numPlayers);
+      console.log(gamesUrl);
       console.log(data);
       // Place board game image
       var gamePic = document.getElementById("gamepic");
@@ -124,19 +130,41 @@ function fetchGame() {
     })
 }
 
-function saveGame() {
-  console.log(localStorage.getItem(gameName))
-  console.log(gameName)
-  console.log(localStorage.hasOwnProperty(gameName))
+// Push savegame into array, save that to local storage, then pull those on page load, and use fetch requests to make favorites list
+var gamesStorage
+if (localStorage.getItem("Saved Games") !== null) {
+  random = localStorage.getItem("Saved Games");
+  gamesStorage = random.split(",")
+  loadFavoriteGames()
+} else {
+var gamesStorage = []
+}
 
-  if (localStorage.hasOwnProperty(gameName) === true) {
-    return;
-  } else {
-    localStorage.setItem(gameName, gameId);
-    favoriteGame = document.createElement("li");
-    document.getElementById("savedGames").append(favoriteGame);
-    favoriteGame.textContent = gameName;
-    favoriteGame.setAttribute("id", gameId);
+function saveGame() {
+    console.log(localStorage.getItem(gameName))
+    console.log(gameName)
+    console.log(localStorage.hasOwnProperty(gameName))
+
+  if (gamesStorage.includes(gameName) === true) {
+    return
+  }
+  else {
+    gamesStorage.push(gameName)
+    localStorage.setItem("Saved Games", JSON.stringify(gamesStorage))
+    favoriteGame = document.createElement("li")
+    document.getElementById("savedGames").append(favoriteGame)
+    favoriteGame.textContent = gameName
+    favoriteGame.setAttribute("id", gameId)
+  }
+}
+
+function loadFavoriteGames() {
+  gamesStorage = JSON.parse(localStorage.getItem("Saved Games"))
+  for (i = 0; i < gamesStorage.length; i++) {
+    favoriteGame = document.createElement("li")
+    document.getElementById("savedGames").append(favoriteGame)
+    favoriteGame.textContent = gamesStorage[i]
+
   }
 }
 
@@ -146,8 +174,8 @@ function fetchSavedGame() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data)
-    })
+      console.log(data);
+    });
 }
 
 // Define variable for use in storing drinks in local storage and under favorites
@@ -190,4 +218,3 @@ function fetchSavedDrink() {
       console.log(data)
     })
 }
-
