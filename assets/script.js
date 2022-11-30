@@ -158,6 +158,16 @@ function saveGame() {
   }
 }
 
+function loadFavoriteGames() {
+  gamesStorage = JSON.parse(localStorage.getItem("Saved Games"))
+  for (i = 0; i < gamesStorage.length; i++) {
+    favoriteGame = document.createElement("li")
+    document.getElementById("savedGames").append(favoriteGame)
+    favoriteGame.textContent = gamesStorage[i]
+
+  }
+}
+
 function fetchSavedGame() {
   fetch(savedGameUrl)
     .then(function (response) {
@@ -186,26 +196,6 @@ function saveDrink() {
     favoriteDrink = document.createElement("li")
     document.getElementById("savedDrinks").append(favoriteDrink)
     favoriteDrink.textContent = drinkName
-  }
-}
-
-// Populate favorites drink on page load
-if (localStorage.getItem("Drink Name") !== null) {
-  drinkStorage = JSON.parse(localStorage.getItem("Drink Name"));
-  for (var i = 0; i < drinkStorage.length; i++) {
-    favoriteDrink = document.createElement("li");
-    document.getElementById("savedDrinks").append(favoriteDrink);
-    favoriteDrink.textContent = drinkStorage[i];
-  }
-}
-
-function loadFavoriteGames() {
-  gamesStorage = JSON.parse(localStorage.getItem("Saved Games"))
-  for (i = 0; i < gamesStorage.length; i++) {
-    favoriteGame = document.createElement("li")
-    document.getElementById("savedGames").append(favoriteGame)
-    favoriteGame.textContent = gamesStorage[i]
-
   }
 }
 
