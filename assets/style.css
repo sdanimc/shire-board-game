@@ -19,17 +19,7 @@ header {
   }
 }
 body {
-  background: rgb(0, 0, 0);
-  background: rgb(255, 70, 33);
-  background: radial-gradient(
-    ellipse at bottom center,
-    rgba(255, 70, 33, 0.5) 10%,
-    rgba(236, 171, 19, 0.5) 30%,
-    rgba(0, 0, 0, 1) 40%
-  );
-
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: black;
 }
 h1 {
   font-size: 3rem;
@@ -94,10 +84,10 @@ ul {
   background-color: rgb(255, 255, 255);
 }
 
-.menu li{
+.menu li {
   color: brown;
 }
-.menu li:hover{
+.menu li:hover {
   background-color: rgb(255, 235, 206);
 }
 .suggestPic {
@@ -151,4 +141,7 @@ ul {
   h2 {
     font-size: 2rem;
   }
+}
+.bottomGlow {
+  box-shadow: 0px 800px 100px 200px rgb(255, 81, 0);
 }
