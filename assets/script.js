@@ -181,6 +181,10 @@ function saveDrink() {
     document.getElementById("savedDrinks").append(favoriteDrink)
     favoriteDrink.textContent = drinkName;
     favoriteDrink.setAttribute("id", drinkName);
+    var clearSpan = document.createElement("span");
+    clearSpan.textContent = "ⓧ  "
+    clearSpan.setAttribute("class", "clear-btn")
+    favoriteDrink.prepend(clearSpan)
   }
 }
 
@@ -192,6 +196,10 @@ if (localStorage.getItem("Drink Name") !== null) {
     document.getElementById("savedDrinks").append(favoriteDrink);
     favoriteDrink.textContent = drinkStorage[i];
     favoriteDrink.setAttribute("id", drinkStorage[i]);
+    var clearSpan = document.createElement("span");
+    clearSpan.textContent = "ⓧ  "
+    clearSpan.setAttribute("class", "clear-btn")
+    favoriteDrink.prepend(clearSpan)
   }
 }
 
