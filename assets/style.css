@@ -88,10 +88,7 @@ main {
 ul {
   background-color: rgb(255, 255, 255);
 }
-.menu a {
-  color: brown;
-}
-.menu a:hover {
+
 .menu li{
   color: brown;
 }
