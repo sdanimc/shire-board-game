@@ -12,18 +12,22 @@ header {
   animation: gradient 10s ease infinite;
   text-align: center;
   color: whitesmoke;
+  padding: 8px;
 }
 
 h1 {
   font-size: 3rem;
 }
+
 @keyframes gradient {
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -34,19 +38,22 @@ main {
   display: flex;
   min-height: 100%;
 }
+
 /*Suggestor Boxes*/
 h2 {
-  color: brown;
+  color: whitesmoke;
 }
+
 #maincontent {
   flex-direction: row;
   display: flex;
   width: 100%;
   margin: 5px;
-  background-color: #0000008a;
+
 }
+
 .suggestions {
-  border: 3px dashed rgb(100, 50, 14);
+  border: 3px solid brown;
   min-height: 100px;
   padding: 7px;
   line-height: 1.3rem;
@@ -54,9 +61,11 @@ h2 {
   margin: 5px;
   text-align: center;
 }
+
 #boardgame {
   margin-left: 10px;
 }
+
 .suggestPic {
   display: none;
   padding: 5px;
@@ -71,35 +80,42 @@ h2 {
 .grid-x {
   width: 90%;
 }
+
 .onGenerate {
   display: none;
 }
+
 .button,
 .button.success {
   background-color: brown;
   color: whitesmoke;
 }
+
 .button:hover,
 .button.success:hover {
-  background-color: rgb(255, 235, 206);
+  background-color: #d78539;
   color: black;
 }
+
 .button:focus,
 .button.success:focus {
-  background-color: rgb(255, 235, 206);
+  background-color: #d78539;
   color: black;
 }
+
 .button.hollow,
 .button.hollow:focus {
   color: brown;
   border: 2px solid brown;
   font-size: 1.1rem;
 }
+
 .button.hollow:hover {
-  color: saddlebrown;
-  border-color: saddlebrown;
+  color: rgb(255, 235, 206);
+  border-color: rgb(255, 235, 206);
   box-shadow: 3px 3px 3px rgb(255, 235, 206);
 }
+
 .slider-handle {
   background-color: brown;
 }
@@ -111,9 +127,11 @@ h2 {
   width: 45%;
   margin: 5px;
 }
+
 .favHeader {
   font-size: 1.4rem;
 }
+
 .vertical li:hover {
   cursor: pointer;
 }
@@ -130,15 +148,18 @@ h2 {
   background-color: rgb(172, 49, 49);
   color: whitesmoke;
 }
+
 ul {
-  background-color: rgb(255, 255, 255);
+  background-color: whitesmoke;
 }
 
 .menu li {
   color: brown;
 }
+
 .menu li:hover {
-  background-color: rgb(255, 235, 206);
+  background-color: #d78539;
+  color: black;
 }
 
 /*Screen adjustment styling*/
@@ -147,6 +168,7 @@ ul {
     font-size: 2rem;
   }
 }
+
 .bottomGlow {
   box-shadow: 0px 800px 100px 200px rgb(255, 81, 0);
 }
