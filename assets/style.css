@@ -1,5 +1,5 @@
 header {
-  background: linear-gradient(-45deg, #9c0120, #85291c, #a12e2e, #8b0000);
+  background: linear-gradient(-45deg, #b45904, #85291c, #a12e2e, #aeb109);
   background-size: 400% 400%;
   animation: gradient 10s ease infinite;
   height: 120px;
@@ -20,11 +20,15 @@ header {
 }
 body {
   background: rgb(0, 0, 0);
-  background: linear-gradient(
-    0deg,
-    rgb(255, 227, 186) -50%,
-    rgb(255, 255, 255) 30%
+  background: rgb(255, 70, 33);
+  background: radial-gradient(
+    ellipse at bottom center,
+    rgba(255, 70, 33, 0.5) 10%,
+    rgba(236, 171, 19, 0.5) 30%,
+    rgba(0, 0, 0, 1) 40%
   );
+
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 h1 {
