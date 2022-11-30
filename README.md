@@ -7,7 +7,7 @@ Users are able to randomly generate a board game and drink suggestions and save 
 ## Installation
 
 Web Page was deployed using GitHub pages.
-Deployed Page Link:
+Deployed Page Link: https://sdanimc.github.io/shire-board-game/ 
 
 ### Usage
 <img src="./assets/images/Preview1.png">
