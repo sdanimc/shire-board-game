@@ -36,6 +36,7 @@ h1 {
     background-position: 0% 50%;
   }
 }
+
 /*Main Content*/
 main {
   display: flex;
@@ -154,4 +155,7 @@ ul {
   h2 {
     font-size: 2rem;
   }
+}
+.bottomGlow {
+  box-shadow: 0px 800px 100px 200px rgb(255, 81, 0);
 }
