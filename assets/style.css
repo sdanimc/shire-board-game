@@ -49,7 +49,6 @@ h2 {
   display: flex;
   width: 100%;
   margin: 5px;
-
 }
 
 .suggestions {
@@ -162,8 +161,8 @@ ul {
   color: black;
 }
 
-.clear-btn:hover{
-  color:white;
+.clear-btn:hover {
+  color: white;
 }
 
 /*Screen adjustment styling*/
@@ -174,5 +173,9 @@ ul {
 }
 
 .bottomGlow {
-  box-shadow: 0px 800px 100px 200px rgb(255, 81, 0);
+  z-index: 0;
+  width: 100%;
+  bottom: -200px;
+  position: fixed;
+  box-shadow: 0px 0px 100px 200px rgb(255, 81, 0);
 }
