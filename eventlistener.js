@@ -9,17 +9,8 @@ var clearBtn = document.querySelector('.clear-btn');
 // Listen for a click event on game button game randomizer
 gameRandomize.addEventListener("click", function (event) {
   event.preventDefault;
-  var slider = document.getElementById("sliderOutput2");
-  numPlayers = slider.value;
-  gamesUrl =
-  "https://api.boardgameatlas.com/api/search?random=true" +
-  "&gt_max_players=" +
-  numPlayers++ +
-  "&lt_min_players=" +
-  numPlayers-- +
-  "&client_id=" +
-  gamesKey;
-  fetchGame(gamesUrl);
+
+  fetchGame();
 
 });
 
@@ -28,7 +19,7 @@ gameRandomize.addEventListener("click", function (event) {
 drinkRandomize.addEventListener("click", function (event) {
   event.preventDefault;
 
-  fetchDrink(drinksUrl);
+  fetchDrink();
 
 });
 
