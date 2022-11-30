@@ -154,7 +154,11 @@ function saveGame() {
     favoriteGame = document.createElement("li")
     document.getElementById("savedGames").append(favoriteGame)
     favoriteGame.textContent = gameName
-    favoriteGame.setAttribute("id", gameId)
+    favoriteGame.setAttribute("id", gameName)
+    var clearSpan = document.createElement("span");
+    clearSpan.textContent = "ⓧ  "
+    clearSpan.setAttribute("class", "clear-btn")
+    favoriteGame.prepend(clearSpan)
   }
 }
 
@@ -164,7 +168,7 @@ function loadFavoriteGames() {
     favoriteGame = document.createElement("li")
     document.getElementById("savedGames").append(favoriteGame)
     favoriteGame.textContent = gamesStorage[i]
-
+    favoriteGame.setAttribute("id", gamesStorage[i])
   }
 }
 
