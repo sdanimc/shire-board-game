@@ -2,6 +2,7 @@ var gameRandomize = document.getElementById('randomGame');
 var drinkRandomize = document.getElementById('randomDrink');
 var saveButtonGame = document.getElementById('saveGame')
 var saveButtonDrink = document.getElementById('saveDrink')
+var faveDrinkBtn = document.getElementById('savedDrinks')
 
 
 // Listen for a click event on game button game randomizer
@@ -17,7 +18,7 @@ gameRandomize.addEventListener("click", function (event) {
 drinkRandomize.addEventListener("click", function (event) {
   event.preventDefault;
 
-  fetchDrink();
+  fetchDrink(drinksUrl);
 
 });
 
@@ -31,4 +32,10 @@ saveButtonGame.addEventListener("click", function(event){
 saveButtonDrink.addEventListener("click", function(event){
   event.preventDefault;
   saveDrink()
+})
+
+faveDrinkBtn.addEventListener("click", function(event) {
+  favedDrink = event.target.id;
+  savedDrinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + favedDrink
+  fetchSavedDrink();
 })

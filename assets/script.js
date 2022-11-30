@@ -9,12 +9,11 @@ var savedGameUrl =
   gameId +
   "&client_id=" +
   gamesKey;
-var drinkId
-var savedDrinkUrl = "www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + drinkId
-var savedDrinkUrl = "www.thecocktaildb.com/api/json/v2/1/lookup.php?i=" + drinkId
+var favedDrink
+var savedDrinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + favedDrink
 
 // Function to fetch drink API
-function fetchDrink() {
+function fetchDrink(drinksUrl) {
   fetch(drinksUrl)
     .then(function (response) {
       return response.json();
@@ -195,7 +194,8 @@ function saveDrink() {
     localStorage.setItem("Drink Name", JSON.stringify(drinkStorage))
     favoriteDrink = document.createElement("li")
     document.getElementById("savedDrinks").append(favoriteDrink)
-    favoriteDrink.textContent = drinkName
+    favoriteDrink.textContent = drinkName;
+    favoriteDrink.setAttribute("id", drinkName);
   }
 }
 
@@ -206,15 +206,19 @@ if (localStorage.getItem("Drink Name") !== null) {
     favoriteDrink = document.createElement("li");
     document.getElementById("savedDrinks").append(favoriteDrink);
     favoriteDrink.textContent = drinkStorage[i];
+    favoriteDrink.setAttribute("id", drinkStorage[i]);
   }
 }
 
 function fetchSavedDrink() {
-  fetch(savedDrinkUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data)
-    })
+  // fetch(savedDrinkUrl)
+  //   .then(function (response) {
+  //     return response.json();
+  //   })
+  //   .then(function (data) {
+    
+  //     console.log(data)
+  //   })
+  fetchDrink(savedDrinkUrl)
 }
+
