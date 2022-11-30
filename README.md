@@ -1,4 +1,5 @@
-# Board game and Drink suggestor
+# Board & Booze
+
 ## Description
 
 Users are able to randomly generate a board game and drink suggestions and save favorite suggestions to view again
@@ -18,5 +19,3 @@ Users can click the save button at the bottom of the card to save a favorite sug
 * Coded by S. D. McMillan, Bryan Smith, Armond Vicencio, Mony Sary, Andrei Skorodumov, Nate Difiori
 * API: TheCocktailDB & Board Game Atlas
 * CSS Framework: Foundation
-
-!!!Everyone Check Your Names I went by Discord usernames!!
