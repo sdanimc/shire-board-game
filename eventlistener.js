@@ -2,24 +2,13 @@ var gameRandomize = document.getElementById('randomGame');
 var drinkRandomize = document.getElementById('randomDrink');
 var saveButtonGame = document.getElementById('saveGame')
 var saveButtonDrink = document.getElementById('saveDrink')
-var faveDrinkBtn = document.getElementById('savedDrinks')
-var faveGameBtn = document.getElementById('savedGames')
 
 
 // Listen for a click event on game button game randomizer
 gameRandomize.addEventListener("click", function (event) {
   event.preventDefault;
-  var slider = document.getElementById("sliderOutput2");
-  numPlayers = slider.value;
-  gamesUrl =
-  "https://api.boardgameatlas.com/api/search?random=true" +
-  "&gt_max_players=" +
-  numPlayers++ +
-  "&lt_min_players=" +
-  numPlayers-- +
-  "&client_id=" +
-  gamesKey;
-  fetchGame(gamesUrl);
+
+  fetchGame();
 
 });
 
@@ -28,7 +17,7 @@ gameRandomize.addEventListener("click", function (event) {
 drinkRandomize.addEventListener("click", function (event) {
   event.preventDefault;
 
-  fetchDrink(drinksUrl);
+  fetchDrink();
 
 });
 
@@ -42,20 +31,4 @@ saveButtonGame.addEventListener("click", function(event){
 saveButtonDrink.addEventListener("click", function(event){
   event.preventDefault;
   saveDrink()
-})
-
-faveDrinkBtn.addEventListener("click", function(event) {
-  favedDrink = event.target.id;
-  savedDrinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + favedDrink
-  fetchSavedDrink();
-})
-
-faveGameBtn.addEventListener("click", function(event) {
-  favedGame = event.target.id;
-  savedGameUrl =
-  "https://api.boardgameatlas.com/api/search?name=" +
-  favedGame +
-  "&client_id=" +
-  gamesKey;
-  fetchSavedGame()
 })

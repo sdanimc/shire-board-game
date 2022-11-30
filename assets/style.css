@@ -1,14 +1,6 @@
 /*Full Page Selectors*/
 body {
   background: rgb(0, 0, 0);
-  background: rgb(255, 70, 33);
-  background: radial-gradient(
-    ellipse at bottom center,
-    rgba(255, 70, 33, 0.5) 10%,
-    rgba(236, 171, 19, 0.5) 30%,
-    rgba(0, 0, 0, 1) 40%
-  );
-
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -52,7 +44,6 @@ h2 {
   width: 100%;
   margin: 5px;
   background-color: #0000008a;
-
 }
 .suggestions {
   border: 3px dashed rgb(100, 50, 14);
@@ -143,10 +134,10 @@ ul {
   background-color: rgb(255, 255, 255);
 }
 
-.menu li{
+.menu li {
   color: brown;
 }
-.menu li:hover{
+.menu li:hover {
   background-color: rgb(255, 235, 206);
 }
 
