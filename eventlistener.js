@@ -46,9 +46,18 @@ saveButtonDrink.addEventListener("click", function(event){
 
 // Populate favorite drink into box
 faveDrinkBtn.addEventListener("click", function(event) {
-  favedDrink = event.target.id;
-  savedDrinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + favedDrink
-  fetchSavedDrink();
+  if (event.target.localName == "li") {
+    favedDrink = event.target.id;
+    savedDrinkUrl = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + favedDrink
+    fetchSavedDrink();
+  } else if (event.target.localName == "span") {
+    event.target.parentElement.remove();
+    event.stopPropagation();
+    drinkStorage = JSON.parse(localStorage.getItem("Drink Name"));
+    var localIndex = drinkStorage.indexOf(event.target.parentElement.id);
+    drinkStorage.splice(localIndex, 1);
+    localStorage.setItem("Drink Name", JSON.stringify(drinkStorage));
+  }
 })
 
 // Populate favorite game into box
