@@ -173,7 +173,6 @@ ul {
 }
 
 .bottomGlow {
-  z-index: 0;
   width: 100%;
   bottom: -200px;
   position: fixed;

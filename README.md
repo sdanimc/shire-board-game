@@ -1,4 +1,5 @@
 # Board game and Drink suggestor
+
 ## Description
 
 Users are able to randomly generate a board game and drink suggestions and save favorite suggestions to view again
@@ -6,7 +7,7 @@ Users are able to randomly generate a board game and drink suggestions and save 
 ## Installation
 
 Web Page was deployed using GitHub pages.
-Deployed Page Link: 
+Deployed Page Link:
 
 ### Usage
 <img src="./assets/images/Preview1.png">
@@ -15,8 +16,10 @@ Within the board game section, users are presented with a slider allowing them t
 Users can click the save button at the bottom of the card to save a favorite suggestion to the respective list on the right side of the page. Clicking a saved favorite from the favorites list will repopulate the suggestion information in the respective card. Users can generate a new suggestion with the Randomize button at the top of the card at any time. Users can also clear out a specific favorites entry by clicking on the ⓧ button next to the entry.
 
 ### Credits
-* Coded by S. D. McMillan, Bryan Smith, Armond Vicencio, Mony Sary, Andrei Skorodumov, Nate Difiori
-* API: TheCocktailDB & Board Game Atlas
-* CSS Framework: Foundation
+
+- Coded by S. D. McMillan, Bryan Smith, Armond Vicencio, Mony Sary, Andrei Skorodumov, Nate Difiori
+- API: TheCocktailDB & Board Game Atlas
+- CSS Framework: Foundation
+- Banner Pen: Manuel Pinto https://manuel.pinto.dev
 
 !!!Everyone Check Your Names I went by Discord usernames!!
